@@ -28,8 +28,7 @@ OPEN = evince
 all 	: $(TRG)
 
 define run-latex
-	  echo "$(LATEX) $<"
-	  $(COPY);$(LATEX) $<||(egrep -A 3 -i "(Reference|Citation|!).*(U|u)ndefined" $(<:%.tex=$(BUILDDIR)%.log);exit 1)
+	  $(COPY);$(LATEX) $<||(egrep -A 3 -i "((Reference|Citation|).*(U|u)ndefined|^!\s)" $(<:%.tex=$(BUILDDIR)%.log);exit 1)
 	  egrep -q $(MAKEIDX) $< && ($(MAKEINDEX) $(<:%.tex=%);$(COPY);$(LATEX) $<) ; true
 	  egrep -c $(RERUNBIB) $(<:%.tex=$(BUILDDIR)%.log) && ($(BIBTEX) $(<:%.tex=$(BUILDDIR)%);$(COPY);$(LATEX) $<) ; true
 	  egrep -q $(RERUN) $(<:%.tex=$(BUILDDIR)%.log) && ($(COPY);$(LATEX) $<) ; true
@@ -45,13 +44,12 @@ $(TRG)	: %.pdf : %.tex $(DEP) $(PDFPICS) $(BIBFILE)
 	  @$(run-latex)
 
 clean	:
-	  echo $(BIBFILE)
-	  -rm -f $(TRG) $(PSF) $(PDF) $(TRG:%.pdf=%.aux) $(TRG:%.pdf=%.bbl) $(TRG:%.pdf=%.blg) $(TRG:%.pdf=%.log) $(TRG:%.pdf=%.out)
+	  -rm -f $(TRG) $(BUILDDIR)*
 
 show	:
 	  @$(OPEN) $(TRG)
 
-.PHONY	: all clean ps pdf
+.PHONY	: clean all ps pdf
 
 ######################################################################
 # Define rules for PDF source files.
