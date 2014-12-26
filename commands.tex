@@ -12,7 +12,7 @@
 % بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
 \usepackage{lastpage}
 % بسته‌‌ای برای ایجاد دیاگرام‌های مختلف
-\usepackage[all]{xy}
+%\usepackage[all]{xy}
 \usepackage{tikz}
 \usetikzlibrary{topaths}
 \tikzset{terminal/.style={
@@ -86,6 +86,21 @@
 \newcommand{\جستار}[1] {\cite{#1}}
 \newcommand{\ارجا}[1]{\ref{#1}}
 \renewcommand{\درشت}[1]{\textbf{#1}}
+\newcommand{\خمیده}[1]{\textit{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\گراف}[1]{$#1 = (V,E)$}
+\newcommand{\graph}[3]{\ensuremath{#1 = (#2,#3)}}
+\newcommand{\یال}[2]{$(v_{#1},v_{#2})$}
+\newcommand{\edge}[4]{\ensuremath{(#1_{#2},#1_{#3}) \in #4}}
+\newcommand{\Ui}{$u_{i}$}
+\newcommand{\Uj}{$u_{j}$}
+\newcommand{\Vi}{$v_{i}$}
+\newcommand{\Vj}{$v_{j}$}
+\newcommand{\V}{$V$}
+\newcommand{\E}{$E$}
+\newcommand{\X}{$X$}
+\newcommand{\A}{$A$}
+\newcommand{\mN}{\mathcal{N}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % تعریف دستورات جدید برای خلاصه نویسی و راحتی کار در هنگام تایپ فرمول‌های ریاضی
 \newcommand{\mA}{\mathcal{A}}% مجموعه‌ی عامل‌ها
