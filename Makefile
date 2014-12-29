@@ -1,4 +1,5 @@
 # Makefile for LaTeX files
+OS = $(shell uname -s)
 
 BUILDDIR = build/
 LATEX	= xelatex -output-directory=$(BUILDDIR) -interaction=batchmode -no-shell-escape
@@ -25,6 +26,10 @@ OUTDATED = echo "EPS-file is out-of-date!" && false
 
 OPEN = evince
 
+ifeq ($(OS),Darwin)
+OPEN = open
+endif
+
 all 	: $(TRG)
 
 define run-latex
@@ -47,7 +52,7 @@ clean	:
 	  -rm -f $(TRG) $(BUILDDIR)*
 
 show	:
-	  @$(OPEN) $(TRG)
+	@$(OPEN) $(TRG)
 
 .PHONY	: clean all ps pdf
 
