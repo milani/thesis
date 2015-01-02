@@ -14,14 +14,12 @@
 % بسته‌‌ای برای ایجاد دیاگرام‌های مختلف
 %\usepackage[all]{xy}
 \usepackage{tikz}
-\usetikzlibrary{topaths}
-\tikzset{terminal/.style={
-							% The shape:
-							rectangle ,minimum size =6mm,rounded corners=4mm,
-							% The rest
-							%very thick,draw=black!50,
-							top color=green!10,bottom color=green!40,
-							font=\ttfamily}}
+\usetikzlibrary{shapes,positioning,arrows}
+\tikzset{node distance=0.28cm,minimum size=0.17cm,inner sep=0,font=\tiny,
+node/.style={circle,draw,fill,align=center},
+node2/.style={circle,draw,fill,double=black,color=gray,align=center},
+node3/.style={circle,draw,thick,align=center},
+node4/.style={circle,draw,fill,double=black,color=gray!30,align=center}}
 % بسته‌ و دستوراتی برای ایجاد لینک‌های رنگی با امکان جهش
 %\usepackage[linktocpage=true,colorlinks,pagebackref=true,linkcolor=blue,citecolor=magenta]{hyperref}
 % چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، 
