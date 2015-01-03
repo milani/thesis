@@ -15,7 +15,7 @@ USETHUMBS = "^[^%]*thumbpdf"
 SRC	:= $(shell egrep -l '^[^%]*\\begin\{document\}' *.tex)
 BIBFILE := $(shell perl -ne '($$_)=/^[^%]*\\bibliography\{(.*?)\}/;@_=split /,/;foreach $$b (@_) {print "$$b.bib "}' $(SRC))
 
-PDFPICS := $(shell perl -ne '@foo=/^[^%]*\\(includegraphics)(\[.*?\])?\{(.*?)\}/g;if (defined($$foo[2])) { if ($$foo[2] =~ /.eps$$/) { print "$$foo[2] "; } else { print "$$foo[2].eps "; }}' *.tex)
+PDFPICS := $(shell perl -ne '@foo=/^[^%]*\\(includegraphics)(\[.*?\])?\{(.*?)\}/g;if (defined($$foo[2])) { if ($$foo[2] =~ /.eps$$/) { print "$$foo[2] "; } elsif ($$foo[2] =~ /.png$$/) {"";} else { print "$$foo[2].eps "; }}' *.tex)
 DEP	= *.tex
 
 TRG	= $(SRC:%.tex=%.pdf)
