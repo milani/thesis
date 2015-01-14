@@ -9,374 +9,8 @@
 
 
 \begin{figure}[t]
-\center{
-\begin{tikzpicture}[scale=1.5,transform shape]
-% 2-node
-    \node[node] (1) {};
-    \node[node] (2) [below of=1] {};
-    \path (1) edge (2);
-    \node [below of=2] {\lr{G0}};
-% 3-node
-    \node[node] (3) [below right=-0.4 and 0.7 of 1] {};
-    \node[node3] (4) [below of=3] {};
-    \node[node] (5) [below of=4] {};
-    \path (3) edge (4);
-    \path (4) edge (5);
-    \node [below of=5] {\lr{G1}};
-
-    \node[node] (6) [right=0.5 of 3] {};
-    \node[node] (7) [right=0.25 of 5] {};
-    \node[node] (8) [right=0.35 of 7] {};
-    \path (6) edge (7);
-    \path (7) edge (8);
-    \path (8) edge (6);
-    \node [below right=0.1 and 0.12 of 7] {\lr{G2}};
-% 4-node
-    \node[node] (9) [below right=-0.4 and 0.9 of 6] {};
-    \node[node3] (10) [below of=9] {};
-    \node[node3] (11) [below of=10] {};
-    \node[node] (12) [below of=11] {};
-    \path (9) edge (10);
-    \path (10) edge (11);
-    \path (11) edge (12);
-    \node [below of=12] {\lr{G3}};
-
-    \node[node] (13) [right=0.5 of 10] {};
-    \node[node3] (14) [below of=13] {};
-    \node[node] (15) [right=0.25 of 12] {};
-    \node[node] (16) [right=0.35 of 15] {};
-    \path (13) edge (14);
-    \path (14) edge (15);
-    \path (14) edge (16);
-    \node [below right=0.09 and 0.1 of 15] {\lr{G4}};
-
-    \node[node] (17) [right=0.5 of 13] {};
-    \node[node] (18) [right=0.35 of 17] {};
-    \node[node] (19) at (16 -| 17) {};
-    \node[node] (20) [right=0.35 of 19] {};
-    \path (17) edge (18);
-    \path (18) edge (20);
-    \path (19) edge (20);
-    \path (19) edge (17);
-    \node [below right=0.09 and 0.1  of 19] {\lr{G5}};
-
-    \node[node2] (21) [right=0.5 of 18] {};
-    \node[node3] (22) [below of=21] {};
-    \node[node] (23) [right=0.25 of 20] {};
-    \node[node] (24) [right=0.35 of 23] {};
-    \path (21) edge (22);
-    \path (22) edge (23);
-    \path (22) edge (24);
-    \path (23) edge (24);
-    \node [below right=0.09 and 0.1 of 23] {\lr{G6}};
-
-    \node[node3] (25) [right=0.5 of 21] {};
-    \node[node] (26) [right=0.35 of 25] {};
-    \node[node] (27) at (24 -| 25) {};
-    \node[node3] (28) [right=0.35 of 27] {};
-    \path (25) edge (26);
-    \path (26) edge (28);
-    \path (27) edge (28);
-    \path (25) edge (27);
-    \path (25) edge (28);
-    \node [below right=0.09 and 0.1 of 27] {\lr{G7}};
-
-    \node[node] (29) [right=0.5 of 26] {};
-    \node[node] (30) [below=0.20 of 29] {};
-    \node[node] (31) [right=0.25 of 28] {};
-    \node[node] (32) [right=0.35 of 31] {};
-    \path (29) edge (30);
-    \path (29) edge (31);
-    \path (29) edge (32);
-    \path (30) edge (31);
-    \path (30) edge (32);
-    \path (31) edge (32);
-    \node [below right=0.09 and 0.1 of 31] {\lr{G8}};
-\end{tikzpicture}%
-\vspace{0.2cm}
-\begin{tikzpicture}[scale=1.5,transform shape]
-% 5-node
-    \node[node] (1) {};
-    \node[node3] (2) [below of=1] {};
-    \node[node2] (3) [below of=2] {};
-    \node[node3] (4) [below of=3] {};
-    \node[node] (5) [below of=4] {};
-    \path (1) edge (2);
-    \path (2) edge (3);
-    \path (3) edge (4);
-    \path (4) edge (5);
-    \node [below of=5] {\lr{G9}};
-
-    \node[node4] (12) [right=0.40 of 2] {};
-    \node[node2] (13) [below of=12] {};
-    \node[node3] (14) [below of=13] {};
-    \node[node] (15) [right=0.15 of 5] {};
-    \node[node] (16) [right=0.35 of 15] {};
-    \path (12) edge (13);
-    \path (13) edge (14);
-    \path (14) edge (15);
-    \path (14) edge (16);
-    \node [below right = 0.10 and 0.05 of 15] {\lr{G10}};
-
-    \node[node] (17) [right=0.3 of 14] {};
-    \node[node3] (18) [right of=17 ] {};
-    \node[node] (19) [right of=18 ] {};
-    \node[node] (20) [below of=18 ] {};
-    \node[node] (21) [below=-0.47 of 18 ] {};
-    \path (17) edge (18);
-    \path (18) edge (19);
-    \path (20) edge (18);
-    \path (21) edge (18);
-    \node [below of=20] {\lr{G11}};
-    
-    \node[node3] (22) [below right= -0.42 and 0.7 of 21] {};
-    \node[node] (23) [below right=0.27 and -0.4 of 22] {};
-    \node[node] (24) [below right=0.27 and 0.15 of 22] {};
-    \node[node2] (25) [below=0.28 of 23] {};
-    \node[node2] (26) [below=0.28 of 24] {};
-    \path (22) edge (23);
-    \path (22) edge (24);
-    \path (23) edge (24);
-    \path (23) edge (25);
-    \path (24) edge (26);
-    \node [below right= 0.10 and 0.05  of 25] {\lr{G12}};
-
-    \node[node4] (27) [right=0.65 of 22] {};
-    \node[node2] (28) [below of=27] {};
-    \node[node3] (29) [below of=28] {};
-    \node[node] (30) [right=0.1 of 26] {};
-    \node[node] (31) [right=0.35 of 30] {};
-    \path (27) edge (28);
-    \path (28) edge (29);
-    \path (29) edge (30);
-    \path (29) edge (31);
-    \path (30) edge (31);
-    \node [below right = 0.10 and 0.05 of 30] {\lr{G13}};
-
-    \node[node] (32) [right=0.35 of 28] {};
-    \node[node] (33) [right=0.35 of 32] {};
-    \node[node3] (34) [below right=0.15 and 0.15 of 32] {};
-    \node[node2] (35) [right=0.1 of 31] {};
-    \node[node2] (36) [right=0.35 of 35] {};
-    \path (32) edge (34);
-    \path (33) edge (34);
-    \path (34) edge (35);
-    \path (34) edge (36);
-    \path (35) edge (36);
-    \node [below right = 0.10 and 0.05 of 35] {\lr{G14}};
-
-    \node[node] (37) [right=0.35 of 33] {};
-    \node[node] (38) [below right=0.10 and -0.45 of 37] {};
-    \node[node] (39) [right=0.5 of 38] {};
-    \node[node] (40) [below right=0.20 and 0.03 of 38] {};
-    \node[node] (41) [right=0.20 of 40] {};
-    \path (37) edge (38);
-    \path (37) edge (39);
-    \path (39) edge (41);
-    \path (38) edge (40);
-    \path (41) edge (40);
-    \node [below right = 0.10 and 0.02 of 40] {\lr{G15}};
-    
-    \node[node4] (42) [below right=-0.45 and 0.75 of 37] {};
-    \node[node] (43) [below right=0.17 and -0.45 of 42] {};
-    \node[node] (44) [right=0.45 of 43] {};
-    \node[node3] (45) [below=0.4 of 42] {};
-    \node[node2] (46) [below of=45] {};
-    \path (42) edge (43);
-    \path (43) edge (45);
-    \path (42) edge (44);
-    \path (44) edge (45);
-    \path (45) edge (46);
-    \node [below of=46] {\lr{G16}};
-
-    \node[node4] (46) [right=0.7 of 42] {};
-    \node[node] (47) [below right=0.17 and -0.45 of 46] {};
-    \node[node] (48) [right=0.45 of 47] {};
-    \node[node3] (49) [below=0.4 of 46] {};
-    \node[node2] (50) [below of=49] {};
-    \path (46) edge (47);
-    \path (46) edge (48);
-    \path (47) edge (49);
-    \path (48) edge (49);
-    \path (46) edge (49);
-    \path (49) edge (50);
-    \node [below of=50] {\lr{G17}};
-    
-    \node[node] (51) [right=0.07 of 48] {};
-    \node[node] (52) [right=0.35 of 51] {};
-    \node[node3] (53) [below right=0.15 and 0.15 of 51] {};
-    \node[node] (54) [below right=0.15 and -0.40 of 53] {};
-    \node[node] (55) [right=0.35 of 54] {};
-    \path (51) edge (52);
-    \path (51) edge (53);
-    \path (52) edge (53);
-    \path (53) edge (54);
-    \path (53) edge (55);
-    \path (55) edge (54);
-    \node [below right = 0.10 and 0.05 of 54] {\lr{G18}};
-    
-    \node[node4] (56) [below right=-0.43 and 0.45 of 52] {};
-    \node[node] (57) [below right=0.17 and -0.45 of 56] {};
-    \node[node] (58) [right=0.45 of 57] {};
-    \node[node3] (59) [below=0.4 of 56] {};
-    \node[node2] (60) [below of=59] {};
-    \path (56) edge (57);
-    \path (56) edge (58);
-    \path (57) edge (59);
-    \path (58) edge (59);
-    \path (59) edge (60);
-    \path (57) edge (58);
-    \node [below of=60] {\lr{G19}};
-\end{tikzpicture}%
-\vspace{0.2cm}
-\begin{tikzpicture}[scale=1.5,transform shape,node distance=0.30cm,minimum size=0.17cm,inner sep=0,node/.style={circle,draw,fill,align=center}]
-
-    \node[node3] [right=0.8 of 1] (6) {};
-    \node[node] [below right=0.3 and -0.55 of 6] (7) {};
-    \node[node] [below right=0.3 and 0.3 of 6] (8) {};
-    \node[node3] [below=0.67 of 6] (9) {};
-    \node[node] [below=0.27 of 6] (10) {};
-    \path (6) edge (7);
-    \path (6) edge (8);
-    \path (7) edge (9);
-    \path (8) edge (9);
-    \path (6) edge (10);
-    \path (10) edge (9);
-    \node [below  of=9] {\lr{G20}};
-    
-    \node[node3] (11) [right=0.8 of 6] {};
-    \node[node] (12) [below right=0.27 and -0.4 of 11] {};
-    \node[node] (13) [below right=0.27 and 0.15 of 11] {};
-    \node[node2] (14) [below=0.28 of 12] {};
-    \node[node2] (15) [below=0.28 of 13] {};
-    \path (11) edge (12);
-    \path (11) edge (13);
-    \path (12) edge (13);
-    \path (13) edge (15);
-    \path (12) edge (14);
-    \path (15) edge (14);
-    \node [below right= 0.12 and 0.05  of 14] {\lr{G21}};
-    
-    \node[node2] (16) [right=0.6 of 11] {};
-    \node[node] (17) [below right=0.15 and -0.4 of 16] {};
-    \node[node] (18) [right=0.36 of 17] {};
-    \node[node2] (19) [below=0.36 of 16] {};
-    \node[node2] (20) [below of=19] {};
-    \path (16) edge (17);
-    \path (16) edge (18);
-    \path (17) edge (18);
-    \path (17) edge (19);
-    \path (18) edge (19);
-    \path (17) edge (20);
-    \path (18) edge (20);
-    \node [below of=20] {\lr{G22}};
-    
-    \node[node] (23) [right=0.5 of 16] {};
-    \node[node] (24) [below=0.18 of 23] {};
-    \node[node3] (25) [below right=0.1 and -0.4 of 24] {};
-    \node[node] (26) [right=0.35 of 25] {};
-    \node[node2] (27) [below=0.1 of 25] {};
-    \path (24) edge (23);
-    \path (24) edge (25);
-    \path (24) edge (26);
-    \path (23) edge (25);
-    \path (23) edge (26);
-    \path (25) edge (26);
-    \path (25) edge (27);
-    \node [below right=0.12 and 0.07 of 27] {\lr{G23}};
-
-    \node[node] (28) [right=0.3 of 23] {};
-    \node[node3] (29) [below=0.25 of 28] {};
-    \node[node] (30) [below=0.25 of 29] {};
-    \node[node2] (31) [below right=0.11 and 0.2 of 28] {};
-    \node[node2] (32) [below=0.2 of 31] {};
-    \path (28) edge (29);
-    \path (29) edge (30);
-    \path (28) edge (31);
-    \path (31) edge (32);
-    \path (30) edge (32);
-    \path (29) edge (31);
-    \path (29) edge (32);
-    \node [below right = 0.12 and 0.0 of 30] {\lr{G24}};
-    
-    \node[node] [right=0.8 of 28] (33) {};
-    \node[node3] [below right=0.3 and -0.55 of 33] (34) {};
-    \node[node2] [below right=0.3 and 0.3 of 33] (35) {};
-    \node[node] [below=0.67 of 33] (36) {};
-    \node[node3] [below=0.27 of 33] (37) {};
-    \path (33) edge (34);
-    \path (33) edge (35);
-    \path (34) edge (36);
-    \path (35) edge (36);
-    \path (33) edge (37);
-    \path (37) edge (36);
-    \path (37) edge (34);
-    \node [below  of=36] {\lr{G25}};
-    
-    \node[node3] (38) [right=0.7 of 33] {};
-    \node[node] (39) [below right=0.15 and -0.4 of 38] {};
-    \node[node] (40) [right=0.36 of 39] {};
-    \node[node2] (41) [below=0.36 of 38] {};
-    \node[node2] (42) [below of=41] {};
-    \path (38) edge (39);
-    \path (38) edge (40);
-    \path (39) edge (40);
-    \path (39) edge (41);
-    \path (40) edge (41);
-    \path (41) edge (42);
-    \path (39) edge (42);
-    \path (40) edge (42);
-    \node [below of=42] {\lr{G26}};
-    
-    \node[node] (43) [right=0.8 of 38] {};
-    \node[node] (44) [below right=0.3 and -0.55 of 43] {};
-    \node[node] (45) [below right=0.3 and 0.3 of 43] {};
-    \node[node] (46) [below=0.67 of 43] {};
-    \node[node3] (47) [below=0.27 of 43] {};
-    \path (43) edge (44);
-    \path (43) edge (45);
-    \path (44) edge (46);
-    \path (45) edge (46);
-    \path (43) edge (47);
-    \path (47) edge (46);
-    \path (47) edge (44);
-    \path (47) edge (45);
-    \node [below  of=46] {\lr{G27}};
-    
-    \node[node3] (48) [right=0.8 of 43] {};
-    \node[node] (49) [below right=0.15 and -0.4 of 48] {};
-    \node[node] (50) [right=0.36 of 49] {};
-    \node[node] (51) [below=0.36 of 48] {};
-    \node[node3] (52) [below of=51] {};
-    \path (48) edge (51);
-    \path (48) edge (49);
-    \path (48) edge (50);
-    \path (49) edge (50);
-    \path (49) edge (51);
-    \path (50) edge (51);
-    \path (51) edge (52);
-    \path (49) edge (52);
-    \path (50) edge (52);
-    \node [below of=52] {\lr{G28}};
-    
-    \node[node] (57) [right=0.4 of 50] {};
-    \node[node] (58) [below right=0.10 and -0.45 of 57] {};
-    \node[node] (59) [right=0.5 of 58] {};
-    \node[node] (60) [below right=0.20 and 0.03 of 58] {};
-    \node[node] (61) [right=0.20 of 60] {};
-    \path (57) edge (58);
-    \path (57) edge (59);
-    \path (57) edge (60);
-    \path (57) edge (61);
-    \path (58) edge (59);
-    \path (58) edge (60);
-    \path (58) edge (61);
-    \path (59) edge (61);
-    \path (59) edge (60);
-    \path (61) edge (60);
-    \node [below right = 0.10 and 0.02 of 60] {\lr{G29}};
-\end{tikzpicture}
-}
+\centering
+\includegraphics[scale=0.4]{./graphlets.png}
 \caption{گرافلت‌های دو تا پنج رأسی. رئوس همرنگ روی هر گرافلت، یک اوربیت را نمایش می‌دهند. شماره هر اوربیت روی یکی از رئوسش مشخص شده‌است.}
 \label{fig:graphlets}
 \end{figure}
@@ -482,15 +116,126 @@ k(G,G') = exp(-\gamma\parallel \hat{C}_G - \hat{C}_{G'}\parallel^2)
 تعریف می‌کنیم که در آن $\gamma = \dfrac{1}{2\sigma^2}$ است.
 
 \section{عملکرد گرافلت کرنل گاوسی}
-\subsection{داده‌‌ها}
-\subsection{شرایط آزمون}
-\subsection{گرافلت یا اوربیت؟}\label{sec:graphlet-vs-orbit}
-\subsection{میزان دقت در تشخیص مدل‌های تصادفی گراف}
+در این بخش، عملکرد گرافلت کرنل گاوسی را در تشخیص و جداسازی مدل‌های گراف تصادفی از یکدیگر، می‌سنجیم. گراف تصادفی، گرافی است که توسط یک روند تصادفی ساخته می‌شود. یک مدل‌ گراف تصادفی، در واقع تعریف یک تابع احتمال خاص برای انتخاب گراف‌ها از گردایه‌ی تمام گراف‌های تصادفیِ ممکن است. این توزیع بگونه‌ای تعریف می‌شود که گراف‌های انتخابی دارای یک مشخصه مشترک باشند. مدل‌هایی که در ادامه به آن‌ها نیاز خواهیم داشت به شرح زیراند:
 
-\section{گرافلت کرنل گاوسی روی رئوس}
-\section{عملکرد گرافلت کرنل گاوسی روی رئوس}
-\subsection{داده‌ها}
-\subsection{شرایط آزمون}
-\subsection{نتایج}
+\paragraph{مدل تصادفی اردوش و رنی (ER)}
+اردوش\پانوشت{\متن‌لاتین{Erdős}} و رنی\پانوشت{\متن‌لاتین{Rényi}} در سال ۱۹۵۹ مدلی برای گراف‌های تصادفی ارائه دادند\جستار{Erdos_1959} که اکنون به مدل \متن‌لاتین{ER} معروف است. گراف تصادفی اردوش-رنی $G(n,p)$، یک گراف با $n$ رأس است که در آن، یال‌ها به صورت مستقل و به احتمال $p$ از بین تمام یال‌های ممکن انتخاب شده‌اند. گرافی که با این روند تولید شود دارای توزیع درجه دوجمله‌ای است. برای $n$ های بزرگ، توزیع درجه، پواسون خواهد بود.
+
+\paragraph{مدل تصادفی واتس و استروگاتس (WS)}
+این مدل در سال ۱۹۹۸ توسط واتس\پانوشت{\متن‌لاتین{Duncan J. Watts}} و استروگاتس\پانوشت{\متن‌لاتین{Steven Strogatz}} معرفی شد\جستار{Watts_1998} و اولین مدلی است که خاصیت جهان کوچک\پانوشت{\متن‌لاتین{Small-World}} را شبیه سازی می‌کند. این خاصیت بیان می‌کند که هر دو فرد در جهان با چند واسطه به یکدیگر متصل می‌شوند و تعداد این واسطه‌ها زیاد نیست (معمولاً بین ۳ تا ۶ واسطه). یک گراف تصادفی واتس و استروگاتس روی $N$ رأس، با میانگین درجه $K$ و پارامتر $\beta$ (
+$0\leq \beta \leq 1$ و $N \geq K \geq ln(N) \geq 1$
+) به صورت زیر ساخته می‌شود:
+\begin{enumerate}
+\فقره گرافی با $N$ رأس و هر رأس با $K$ همسایه، $K/2$ در سمت راست و $K/2$ در سمت چپ، در نظر گرفته می‌شود.
+\فقره اگر رئوس را با برچسب‌گذاری $n_0,\ldots,n_N-1$ مشخص کنیم، برای هر رأس، هر یال $(n_i,n_j)$ که $i < j$ به احتمال $\beta$ بازنشانی\پانوشت{\متن‌لاتین{rewire}} می‌شود. در اینجا، بازنشانی یعنی تعویض یال $(n_i,n_j)$ با یال $(n_i,n_k)$ که $n_k$ به احتمال یکنواخت از بین دیگر رئوس انتخاب می‌شود به شرطی که گراف، ساده باقی بماند.
+\end{enumerate}
+
+\paragraph{مدل تصادفی باراباشی و آلبرت (BA)}
+مدل تصادفی باراباشی\پانوشت{\متن‌لاتین{Barabasi}}-آلبرت\پانوشت{\متن‌لاتین{Albert}} در سال ۱۹۹۹ برای مدل‌سازی خاصیت \متن‌لاتین{scale-free} در شبکه‌های واقعی (مثل شبکه وب و یا خطوط انتقال برق)، طراحی شد\جستار{Barabasi_1999}. این خاصیت بیان می‌کند که اولاً شبکه‌ها در حال رشد کردن هستند یعنی به تعداد رئوس آن‌ها اضافه می‌شود، و ثانیاً احتمال بوجود آمدن یال بین رئوس جدید و رئوسی که بیشترین درجه را دارند، بیشتر است. این خاصیت در واقع اشاره‌ای به \خمیده{اثر متیو}\پانوشت{\متن‌لاتین{Matthew}} است که بیان می‌کند «پولدار، پولدارتر می‌شود»\جستار{Merton_1968}. برای تولید گراف با این خاصیت، یک گراف همبند با $n$ رأس در نظر گرفته می‌شود. رئوس جدید، یکی یکی به گراف افزوده می‌شوند. هر رأس جدید می‌تواند به $n$ رأس قبل به احتمالی بر حسب درجه رئوس، متصل شود. احتمال اینکه رأس جدید به رأس $n_i$ متصل شود برابر است با
+$\dfrac{k_i}{\sum_jk_j}$ 
+که $k_i$ درجه رأس $n_i$ و جمع، روی کل رئوس گراف تا لحظه اضافه کردن $n_i$ است. گرافی که با این روند ساخته شود، دارای توزیع درجه \خمیده{\متن‌لاتین{power law}}  با پارامتر $\lambda = 3$ است. این توزیع به شکل $P(k) \sim k^{-\lambda}$ تعریف می‌شود.
+
+\paragraph{مدل تصادفی هندسی (GEO)}
+مدل گراف تصادفی هندسی برای مدل‌سازی و تحلیل شبکه‌های سنسور بی‌سیم\جستار{Bettstetter_2002} و همچنین شبکه‌های تعاملات پروتئینی\جستار{Przulj_2004} مورد استفاده قرار گرفته است. در این مدل، 
+برای ساخت یک گراف تصادفی هندسی با $n$ رأس و به شعاع $r$، $n$ نقطه متناظر با رئوس در فضای $\R^d$ به طول واحد به صورت تصادفی و به احتمال یکنواخت قرار داده می‌شوند. بین رئوس متناظر با نقاطی که فاصله اقلیدسی آن‌ها کمتر از $r$ باشد، یال قرار داده می‌شود.
+
+\paragraph{مدل ترتیبی ساخت گراف تصادفی (CM)}
+هدف از ارائه این مدل، ساخت گراف از روی دنباله درجه دلخواه، و در نتیجه، توزیع درجه دلخواه بوده‌است\جستار{Molloy_1995}. در این مدل، برای هر دنباله درجه قابل قبول (یعنی جمع اعداد دنباله، عددی زوج باشد)، از گردایه‌ی گراف‌ها با آن توزیع درجه، یک گراف به صورت تصادفی انتخاب می‌شود. البته باید توجه داشت که گراف‌های حاصل الزاماً ساده نیستند. برای تبدیل گراف به یک گراف ساده، طوقه‌ها و یال‌های چندگانه از گراف حذف می‌شوند. اینکار باعث تغییر در دنباله درجه می‌شود که البته در گراف‌های بزرگ، این تغییر قابل چشم‌پوشی است. در این مدل، متناسب با دنباله درجه داده شده مثل $\vec{k}$، $n$ رأس در نظر گرفته می‌شود. به هر رأس $n_i$ متناسب با درجه در نظر گرفته شده برای آن، $k_i$ نیم یال نسبت داده می‌شود. نیم‌یال‌ها به صورت تصادفی به یکدیگر متصل می‌شوند. نتیجه یک گراف با توزیع درجه داده‌ شده خواهد بود.
+
+\subsection{داده‌‌ها}
+از مدل‌های تصادفی معرفی شده، گراف‌هایی با اندازه ۱۰ تا ۱۰۰۰ رأس تولید شد. جدول \ارجا{tab:random-graph-datasets-statistics} پارامترهای انتخابی برای هر مدل و تعداد گراف‌های تولید شده را مشخص کرده‌است. ذکر این نکته ضروری است که تضمینی برای همبندی گراف‌های تولید شده برای بعضی مدل‌ها وجود ندارد. به همین دلیل، پس از تولید گراف‌ها، بزرگترین مؤلفه همبندی هر کدام استخراج و به عنوان گراف نهایی مورد استفاده قرار گرفته‌است. در بعضی مواقع، دو مؤلفه همبندی اندازه یکسان داشته‌اند که در این صورت، یکی از آن‌ها به صورت تصادفی حذف شده‌است. لذا تعداد گراف‌های نهایی برای مدل‌های مختلف، متفاوت است. همچنین توجه شود که از مدل ترتیبی ساخت گراف تصادفی برای تولید گراف‌هایی با توزیع درجه \متن‌لاتین{power law} در توان‌های مختلف استفاده شده‌است. برای این مدل‌ها، ستون پارامتر، توان تابع توزیع را مشخص می‌کند.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | c | c | c | c | c | c |}
+    \hline
+    نام & مدل & تعداد گراف‌ها & پارامتر‌ها & متوسط تعداد رئوس & متوسط تعداد یال‌ها \\[5pt] \hline
+\lr{ER} & ER & ۹۵۴ & $p = 0.05$ & ۵۲۱ & ۸۷۳۳ \\
+\lr{WS} & WS & ۹۹۳ & $k = 5,p = 0.5$ & ۵۰۶ & ۱۵۱۶ \\
+\lr{GEO} & GEO & ۷۳۹ & $r = 0.04$ & ۴۶۴ & ۱۲۱۳ \\
+\lr{PW1} & CM & ۹۸۷ & $\lambda = 2.50$ & ۵۰۹ & ۷۱۲ \\
+\lr{PW2} & CM & ۹۸۰ & $\lambda = 2.75$ & ۵۰۴ & ۶۰۶ \\
+\lr{PW3} & CM & ۹۹۴ & $\lambda = 3.00$ & ۵۰۴ & ۵۵۵ \\
+\lr{PW4} & CM & ۹۶۴ & $\lambda = 3.25$ & ۴۸۷ & ۵۰۹ \\ \hline
+\end{tabular}
+\caption{
+گراف‌های تولید شده با استفاده از مدل‌های تصادفی گراف. ER نمایش دهنده مدل تصادفی اردوش-رنی، WS نمایش دهنده مدل تصادفی واتس-استروگاتس، GEO نمایش دهنده مدل تصادفی هندسی و \lr{PW1} تا \lr{PW4} نمایش‌دهنده مدل‌ تصادفی ترتیبی هستند. لازم به ذکر است که \lr{PW3} همان مدل باراباشی-آلبرت می‌باشد.
+}
+\label{tab:random-graph-datasets-statistics}
+\end{table}
+
+\subsection{جداسازی گراف‌های scale-free از یکدیگر}
+با تغییر در پارامتر $\lambda$، ساختار گراف‌های scale-free و بسیاری از مشخصه‌های آن‌ها از جمله طول کوتاهترین مسیر، قطر گراف، تعداد یال‌ها، ضریب خوشه‌بندی و ... تغییر می‌کند. شکل \ارجا{fig:scale-free-distance} شباهت گراف‌های مجموعه‌های \متن‌لاتین{PW2}، \متن‌لاتین{PW3} و \متن‌لاتین{PW4} نسبت به گراف‌های مجموعه \متن‌لاتین{PW1} را با استفاده از گرافلت‌کرنل گاوسی (با پارامتر $\gamma = 2$) نشان می‌دهد. در این شکل، محور افقی اندازه گراف و محور عمودی، فاصله گراف‌ها از گراف‌های مرجع (\متن‌لاتین{PW1}) را مشخص می‌کند. هر چه این عدد برای یک گراف به یک نزدیکتر باشد، یعنی این گراف شباهت کمتری به گراف متناظر در \متن‌لاتین{PW1} دارد.
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.5]{./scale-free-distance.pdf}
+\caption{فاصله گراف‌های \lr{PW2} و \lr{PW3} و \lr{PW4} از گراف مرجع \lr{PW1} با استفاده از گرافلت کرنل گاوسی با پارامتر $\gamma = 2$.}
+\label{fig:scale-free-distance}
+\end{figure}
+
+به نظر می‌رسد که گرافلت کرنل گاوسی می‌تواند بخوبی بین گراف‌های \متن‌لاتین{scale-free} با پارامتر‌های مختلف، تفاوت قائل شود. با استفاده از یک ماشین \متن‌لاتین{C-SVM} میزان دقت کرنل در تفکیک این گراف‌ها اندازه‌گیری شده‌است. نحوه انجام اندازه‌گیری به این شرح است که ابتدا داده‌ها به صورت تصادفی به ۱۰ قسمت تقسیم شده‌اند. از ۹ قسمت برای آموزش ماشین، و از قسمت باقی مانده برای سنج دقت، استفاده شده‌است. به این کار، \متن‌لاتین{10-fold cross validation} گفته می‌شود. پس از میزان کردن پارامتر‌ $C$ برای ماشین و $\gamma$ برای کرنل، و ۱۰ بار تکرار آزمایش، نتایج موجود در جدول \ارجا{tab:svm-scale-free} بدست آمد.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | c | c |}
+    \hline
+مدل‌ها & پارامتر‌های انتخاب & میزان دقت
+  \\[5pt] \hline
+\lr{PW1} در مقابل \lr{PW2} & $C=10, \gamma = 0.01$ & 81\% \\ \hline
+\lr{PW1} در مقابل \lr{PW3} & $C=10, \gamma = 0.01$ & 80\% \\ \hline
+\lr{PW1} در مقابل \lr{PW4} & $C=10, \gamma = 0.01$ & 84\% \\ \hline
+\end{tabular}
+\caption{
+دقت کرنل در تفکیک گراف‌های \متن‌لاتین{scale-free} از یکدیگر. برای هر گروه، بهترین پارامتر‌ها توسط $SVM$ انتخاب شده‌است.
+}
+\label{tab:svm-scale-free}
+\end{table}
+
+\subsection{جداسازی گراف‌های تصادفی \lr{GEO}، \lr{BA}، \lr{WS}، \lr{ER}}
+شکل \ارجا{fig:random-graph-distance} شباهت گراف‌های تصادفی تولید شده در مدل‌های \متن‌لاتین{ER}، \متن‌لاتین{GEO}، \متن‌لاتین{WS} به گراف‌های \متن‌لاتین{BA} را با استفاده از گرافلت‌کرنل گاوسی (با پارامتر $\gamma = 2$) نشان می‌دهد. همانطور که مشخص است، در اندازه‌های کوچک، شباهت گراف‌ها به یکدیگر بسیار زیاد است. اما با افزایش اندازه گراف‌ها، کرنل می‌تواند تفاوت‌ها را بهتر تشخیص دهد. جدول \ارجا{tab:svm-random-graph}، حاصل انجام آزمایش مشابه بخش قبل، روی این گراف‌هاست. به نظر می‌رسد دقت بالای کرنل در تشخیص گراف‌های \متن‌لاتین{ER} از گراف‌های \متن‌لاتین{BA}، به دلیل تفاوت زیاد در چگالی گراف‌هاست. چگالی یک گراف، نسبت یال‌های گراف به تمام یال‌های ممکن در آن گراف ($\dfrac{n(n-1)}{2}$) است.
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.5]{./random-graph-distance.pdf}
+\caption{فاصله گراف‌های \lr{ER} و \lr{GEO} و \lr{WS} از گراف‌های مرجع \lr{BA} با استفاده از گرافلت کرنل گاوسی با پارامتر $\gamma = 2$.}
+\label{fig:random-graph-distance}
+\end{figure}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | c | c |}
+    \hline
+مدل‌ها & پارامتر‌ها & میزان دقت
+  \\[5pt] \hline
+\lr{BA} در مقابل \lr{ER} & $C=10, \gamma = 10$ & 96\% \\ \hline
+\lr{BA} در مقابل \lr{WS} & $C=10, \gamma = 10$ & 82\% \\ \hline
+\lr{BA} در مقابل \lr{GEO} & $C=10, \gamma = 10$ & 81\% \\ \hline
+\end{tabular}
+\caption{
+دقت کرنل در تفکیک گراف‌های \متن‌لاتین{scale-free} از یکدیگر. برای هر گروه، بهترین پارامتر‌ها توسط $SVM$ انتخاب شده‌است.
+}
+\label{tab:svm-random-graph}
+\end{table}
+
+\subsection{گرافلت یا اوربیت؟}\label{sec:graphlet-vs-orbit}
+شاید به نظر برسد که اوربیت‌ها، اطلاعات دقیقتری از شبکه بدست می‌دهند. چنین تصوری برای تحلیل رئوس گراف درست است. اما آزمایش نشان می‌دهد که برای مقایسه گراف‌ها، استفاده از بردار ۷۳تایی اوربیتیِ گراف، از دقت گرافلت کرنل گاوسی می‌کاهد. جدول \ارجا{tab:graphlet-vs-orbit} دقت گرافلت کرنل گاوسی در تفکیک انواع گراف‌های \متن‌لاتین{scale-free} را با استفاده از بردار گرافلت و بردار اوربیت، نشان می‌دهد. پارامتر‌های انتخاب شده، پارامتر‌هایی است که در آن هر دو کرنل بهترین جواب‌ها را داشتند. 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{| c | c | c | c |}
+    \hline
+مدل‌ها & پارامتر‌ها & کرنل گرافلتی & کرنل اوربیتی
+  \\[5pt] \hline
+\lr{PW1} در مقابل \lr{PW2} & $C=10, \gamma = 0.01$ & 81\% & 70\%\\ \hline
+\lr{PW1} در مقابل \lr{PW3} & $C=10, \gamma = 0.01$ & 80\% & 70\%\\ \hline
+\lr{PW1} در مقابل \lr{PW4} & $C=10, \gamma = 0.01$ & 84\% & 71\%\\ \hline
+\end{tabular}
+\caption{
+دقت تشخیص گراف‌های تصادفی \متن‌لاتین{PW2}، \متن‌لاتین{PW3} و \متن‌لاتین{PW4} از گراف‌های \متن‌لاتین{PW1} با استفاده از بردار اوربیتی در گرافلت کرنل گاوسی (کرنل گرافلتی) و بردار گرافلتی در گرافلت کرنل گاوسی (کرنل گرافلتی).
+}
+\label{tab:graphlet-vs-orbit}
+\end{table}
 
 \section{جمع‌بندی}
+در این فصل، الگوریتم شمارش بهینه گرافلت‌ها را شرح دادیم و گرافلت کرنل گاوسی را بر مبنای بردار گرافلت و تابع کرنل گاوسی، تعریف کردیم. سپس از این کرنل در تشخیص و جداسازی انواع گراف‌های تصادفی استفاده نمودیم. همانطور که از نتایج مشخص است، این کرنل قابلیت خوبی در تشخیص ساختار گراف‌ها دارد. در فصل بعد، از این کرنل روی داده‌های واقعی استفاده کرده و آن‌را با دیگر گراف کرنل‌ها مقایسه می‌کنیم.
