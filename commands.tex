@@ -272,22 +272,12 @@ node4/.style={circle,draw,fill,double=black,color=gray!30,align=center}}
 \newcommand*{\@msglspl}[1]{\ifthenelse{\equal{\glsentrytype{#1}}{english}}{\glsplural{#1}\glsuseri{f-#1}}{\oldglspl{#1}}}
 \makeatother
 
-\newcommand{\renewglossaryentry}[1]{%
-  \ifglsentryexists{#1}
-   {\global\csundef{glo@#1@name}}
-   {}
-   \newglossaryentry{#1}
-}
+\newcommand{\renewglossaryentry}[1]{\ifglsentryexists{#1}{\global\csundef{glo@#1@name}}{}\newglossaryentry{#1}}
 
-\newcommand{\newword}[4]{
-	\renewglossaryentry{#1}     {type={english},name={\lr{#2}},plural={#4},text={#3},description={}}
-	\renewglossaryentry{f-#1} {type={persian},name={#3},text={\lr{#2}},description={}}
-}
+\newcommand{\newword}[4]{\renewglossaryentry{#1}     {type={english},name={\lr{#2}},plural={#4},text={#3},description={}}
+\renewglossaryentry{f-#1} {type={persian},name={#3},text={\lr{#2}},description={}}}
 
-\newcommand{\واژه}[2]{
-  \newword{#2}{#2}{#1}{}
-  \gls{#2}
-}
+\newcommand{\واژه}[2]{\newword{#2}{#2}{#1}{}\gls{#2}}
 
 \let\Oldprintglossary\printglossary
 \renewcommand{\printglossary}{
