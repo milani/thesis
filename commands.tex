@@ -14,7 +14,6 @@
 % بسته‌‌ای برای چاپ شدن خودکار تعداد صفحات در صفحه «معرفی پایان‌نامه»
 \usepackage{lastpage}
 % بسته‌‌ای برای ایجاد دیاگرام‌های مختلف
-%\usepackage[all]{xy}
 \usepackage{tikz}
 \usetikzlibrary{shapes,positioning,arrows}
 \tikzset{node distance=0.28cm,minimum size=0.17cm,inner sep=0,font=\tiny,
@@ -33,7 +32,7 @@ node4/.style={circle,draw,fill,double=black,color=gray!30,align=center}}
 % بسته‌ لازم برای تنظیم سربرگ‌ها
 \usepackage{fancyhdr}
 % بسته‌ای برای ظاهر شدن «مراجع» و «نمایه» در فهرست مطالب
-\usepackage[nottoc]{tocbibind}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
 % دستورات مربوط به ایجاد نمایه
 \usepackage{makeidx}
 \makeindex
@@ -65,16 +64,11 @@ node4/.style={circle,draw,fill,double=black,color=gray!30,align=center}}
 \renewcommand{\abstractname}{}
 % دستوری برای حذف کلمه «abstract»
 \renewcommand{\latinabstract}{}
-% دستوری برای تغییر نام کلمه «اثبات» به «برهان»
-\renewcommand\proofname{\textbf{برهان}}
 % دستوری برای تغییر نام کلمه «کتاب‌نامه» به «مراجع»
 \renewcommand{\bibname}{مراجع}
 %استفاده از کلمه‌ی نمودار به جای شکل
 \renewcommand{\figurename}{شکل}
-% دستوری برای تعریف واژه‌نامه انگلیسی به فارسی
-\newcommand\persiangloss[2]{#1\dotfill\lr{#2}\\}
-% دستوری برای تعریف واژه‌نامه فارسی به انگلیسی 
-\newcommand\englishgloss[2]{#2\dotfill\lr{#1}\\}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % تعریف و نحوه ظاهر شدن عنوان قضیه‌ها، تعریف‌ها، مثال‌ها و ...
 \theoremstyle{definition}
@@ -145,39 +139,6 @@ node4/.style={circle,draw,fill,double=black,color=gray!30,align=center}}
 \def\3{\textrm{\lr{3}}}
 \def\4{\textrm{\lr{4}}}
 \def\5{\textrm{\lr{5}}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% براساس نسخه‌های از ۱.۲.۵ به بعد بسته‌ی bidi در توابع زیر باید توجه داشت:
-% که l یعنی شروع نوشتار از ابتدای خط یا جعبه،
-% و r یعنی شروع نوشتار از انتهای خط یا جعبه، 
-% و s یعنی شروع نوشتار از وسط خط یا جعبه.
-\newdimen\xleftright
-\xleftright=\textwidth
-\advance \xleftright by -10.5cm
-\newcommand{\leftright}[3]{%
-\noindent
-\makebox[4 cm][r]{#1}
-\makebox[\xleftright][s]{}
-\makebox[5.5 cm][l]{#2}
-\makebox[1 cm][l]{#3}%
-}
-\newcommand{\leftrightb}[2]{%
-\noindent
-\makebox[4 cm][r]{#1}
-\makebox[\xleftright][s]{}
-\makebox[6.5 cm][l]{#2}%
-}
-\newcommand{\semanticsa}[2]{%
-\noindent
-\makebox[4.3 cm][r]{#1}
-\makebox[\xleftright][c]{اگر و فقط اگر}
-\makebox[6.2 cm][l]{#2}%
-}
-\newcommand{\semanticsb}[2]{%
-\noindent
-\makebox[3.5 cm][l]{#1}
-\makebox[\xleftright][c]{اگر و فقط اگر}
-\makebox[7 cm][r]{#2}%
-}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % دستورهایی برای سفارشی کردن سربرگ صفحات
 \csname@twosidetrue\endcsname
@@ -213,7 +174,7 @@ node4/.style={circle,draw,fill,double=black,color=gray!30,align=center}}
 \Huge\bfseries #2\par}%
 \@endpart}
 \def\@makechapterhead#1{%
-\vspace*{-30\p@}%
+\vspace*{20\p@}%
 {\parindent \z@ \mycustomraggedright %\@mycustomfont
 \ifnum \c@secnumdepth >\m@ne
 \if@mainmatter
@@ -225,7 +186,7 @@ node4/.style={circle,draw,fill,double=black,color=gray!30,align=center}}
 \fi
 \interlinepenalty\@M 
 \Huge \bfseries #1\par\nobreak
-\vskip 120\p@
+\vskip 90\p@
 }}
 \makeatother
 
@@ -282,18 +243,17 @@ node4/.style={circle,draw,fill,double=black,color=gray!30,align=center}}
 \let\Oldprintglossary\printglossary
 \renewcommand{\printglossary}{
 	\let\appendix\relax
-
-	\clearpage
 	%\phantomsection
-
+    \thispagestyle{empty}
 	\addcontentsline{toc}{chapter}{واژه نامه انگلیسی به فارسی}
+	\noindent
 	\setglossarystyle{myEntoFa}
 	\Oldprintglossary[type=english]
-	
-	\clearpage
+	\clearpage{\thispagestyle{empty}}
 	%\phantomsection
-
+    \thispagestyle{empty}
 	\addcontentsline{toc}{chapter}{واژه نامه فارسی به انگلیسی}
+	\noindent
 	\setglossarystyle{myFaToEn}
 	\Oldprintglossary[type=persian]
 }%
