@@ -38,7 +38,7 @@ endif
 all 	: $(TRG)
 
 define run-latex
-	  $(COPY);$(LATEX) $<||(egrep -A 3 -i "((Reference|Citation|).*(U|u)ndefined|^!\s)" $(<:%.tex=$(BUILDDIR)%.log);exit 1)
+	  $(COPY);$(LATEX) $<||(egrep -A 3 -i "((Reference|Citation).*(U|u)ndefined|^!\s)" $(<:%.tex=$(BUILDDIR)%.log);exit 1)
           $(GLOSSARY); ($(MAKEGLOSSARY) $(<:%.tex=%);$(COPY);$(LATEX) $<) ; true
 	  egrep -q $(MAKEIDX) $< && ($(MAKEINDEX) $(BUILDDIR)$(<:%.tex=%);$(COPY);$(LATEX) $<) ; true
 	  egrep -c $(RERUNBIB) $(<:%.tex=$(BUILDDIR)%.log) && ($(BIBTEX) $(<:%.tex=$(BUILDDIR)%);$(COPY);$(LATEX) $<) ; true
